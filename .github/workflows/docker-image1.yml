@@ -29,7 +29,7 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: wrhsd/m3e-large:latest  # 用你的 DockerHub 用户名和仓库名替换
+        tags: wrhsd/m3e-base:latest  # 用你的 DockerHub 用户名和仓库名替换
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
