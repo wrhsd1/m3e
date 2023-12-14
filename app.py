@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from sentence_transformers import SentenceTransformer
 
-m3e = SentenceTransformer('moka-ai/m3e-large')
+m3e = SentenceTransformer('moka-ai/m3e-base')
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def embeddings():
     input_text = data.get('input')
     model = data.get('model')
     if model is None:
-        model = "moka-ai/m3e-large"
+        model = "moka-ai/m3e-base"
 
     if input_text is None:
         return jsonify(error="No input text provided"), 400
